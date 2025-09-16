@@ -8,7 +8,12 @@ import { ContactSection } from "@/components/contact-section"
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
-      app page
+      <HeroSection />
+      <SkillsSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <EducationSection />
+      <ContactSection />
     </div>
   )
 }

@@ -2,10 +2,11 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
+import Link from "next/link"
 
 export function ProjectsSection() {
   return (
-    <section className="py-16 px-4">
+    <section id="projects" className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="font-serif text-4xl font-bold text-center mb-12 text-balance">Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -16,7 +17,7 @@ export function ProjectsSection() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4 text-sm">
-                A comprehensive public records management system serving agencies from small towns to state-level
+                A public records management system serving agencies from small towns to state-level
                 organizations. Features end-to-end payment processing, task management, and complex organizational
                 hierarchies.
               </p>
@@ -37,9 +38,11 @@ export function ProjectsSection() {
                   Multi-tenant
                 </Badge>
               </div>
-              <Button variant="outline" size="sm" className="w-full gap-2 bg-transparent">
-                <ExternalLink className="w-3 h-3" />
-                View Details
+              <Button variant="outline" size="sm" className="w-full gap-2 bg-transparent" asChild>
+                <Link href={"http://govquest.com/"} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-3 h-3" />
+                  View Project
+                </Link>
               </Button>
             </CardContent>
           </Card>

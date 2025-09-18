@@ -30,7 +30,7 @@ export function ExperienceSection() {
   ]
 
   return (
-    <section className="py-16 px-4 bg-muted/50">
+    <section id="experience" className="py-16 px-4 bg-muted/50">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">Work Experience</h2>
         <div className="space-y-8">

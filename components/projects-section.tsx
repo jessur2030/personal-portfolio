@@ -1,7 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink } from "lucide-react"
+import { 
+  ExternalLink, 
+} from "lucide-react"
 import Link from "next/link"
 
 export function ProjectsSection() {
@@ -26,16 +28,22 @@ export function ProjectsSection() {
                   Node.js
                 </Badge>
                 <Badge variant="outline" className="text-xs">
+                  TypeScript
+                </Badge>
+                <Badge variant="outline" className="text-xs">
                   MySQL
                 </Badge>
                 <Badge variant="outline" className="text-xs">
-                  Stripe
+                  Redis
                 </Badge>
                 <Badge variant="outline" className="text-xs">
-                  AWS
+                  AWS (S3, EC2, RDS, Lambda, ECS, Amplify, Cognito)
                 </Badge>
                 <Badge variant="outline" className="text-xs">
-                  Multi-tenant
+                  Stripe SDK
+                </Badge>
+                <Badge variant="outline" className="text-xs">
+                  Multi-tenant SaaS
                 </Badge>
               </div>
               <Button variant="outline" size="sm" className="w-full gap-2 bg-transparent" asChild>

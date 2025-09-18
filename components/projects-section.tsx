@@ -31,6 +31,9 @@ export function ProjectsSection() {
                   TypeScript
                 </Badge>
                 <Badge variant="outline" className="text-xs">
+                  Next.js
+                </Badge>
+                <Badge variant="outline" className="text-xs">
                   MySQL
                 </Badge>
                 <Badge variant="outline" className="text-xs">

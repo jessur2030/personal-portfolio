@@ -24,7 +24,7 @@ export function SkillsSection() {
   return (
     <section className="py-16 px-4" id="skills">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Technical Expertise</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Technical Skills</h2>
         <Card>
           <CardContent className="p-8">
             <div className="space-y-8">

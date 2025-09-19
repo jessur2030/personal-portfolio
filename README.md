@@ -1,6 +1,8 @@
 # Jesus Rosario Personal Portfolio
 
-A modern, responsive personal portfolio website built with Next.js, showcasing my skills, projects, experience, and contact information.
+A modern, responsive personal portfolio website built with Next.js.
+
+Live Demo: [https://jessusdev.com](https://jessusdev.com)
 
 ## Features
 
@@ -88,9 +90,3 @@ Feel free to fork this repository and customize it for your own use. If you find
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-## Contact
-
-Jesus Rosario - [Your Email/LinkedIn]
-
-Project Link: [https://github.com/jessur2030/personal-portfolio](https://github.com/jessur2030/personal-portfolio)

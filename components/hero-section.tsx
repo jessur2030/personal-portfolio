@@ -13,9 +13,10 @@ export function HeroSection() {
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">Jesus Rosario</h1>
         <p className="text-2xl md:text-3xl text-primary font-semibold mb-8 text-balance">Lead Software Engineer</p>
         <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty">
-          Lead Software Engineer with a strong background in designing and scaling APIs, multi-tenant SaaS platforms,
-          and data-driven systems. Skilled at driving technical strategy, delivering scalable cloud solutions, and
-          guiding teams to build high-impact products that balance performance, reliability, and business goals.
+            Lead Software Engineer with a proven track record of building and scaling SaaS platforms from the ground up. 
+            Experienced in multi-tenant architectures, backend systems, and cloud-native applications, with a focus on 
+            delivering reliable, maintainable solutions that drive real business impact. Proven ability to turn complex 
+            requirements into clear designs and guide a team of developers to ship high-quality software in fast-paced environments.
         </p>
 
         <div className="flex flex-col items-center gap-4 mb-8">

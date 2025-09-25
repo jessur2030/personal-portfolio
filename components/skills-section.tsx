@@ -7,7 +7,7 @@ export function SkillsSection() {
     {
       category: "Languages & Frameworks",
       icon: <Code className="w-6 h-6 text-primary" />,
-      items: ["JavaScript", "TypeScript", "Node.js", "PHP", "React.js", "Next.js"],
+      items: ["JavaScript", "TypeScript", "Node.js", "PHP", "Go", "React.js", "Next.js"],
     },
     {
       category: "Databases & Cloud",

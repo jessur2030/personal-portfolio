@@ -7,17 +7,17 @@ export function SkillsSection() {
     {
       category: "Languages & Frameworks",
       icon: <Code className="w-6 h-6 text-primary" />,
-      items: ["JavaScript", "TypeScript", "Node.js", "PHP", "Go", "React.js", "Next.js"],
+      items: ["TypeScript", "JavaScript", "Go", "SQL", "Node.js", "Next.js", "React"],
     },
     {
       category: "Databases & Cloud",
       icon: <Database className="w-6 h-6 text-primary" />,
-      items: ["MySQL", "Redis", "AWS", "Docker", "Linux", "EC2", "S3", "RDS", "ECS", "Lambda"],
+      items: ["MySQL", "Redis", "AWS", "ECS", "EC2", "RDS", "S3", "SQS", "EventBridge", "Lambda", "Cognito", "CloudFront", "CloudFormation", "Docker"],
     },
     {
       category: "Architecture & Systems",
       icon: <Settings className="w-6 h-6 text-primary" />,
-      items: ["Multi-tenant SaaS", "RESTful APIs", "Microservices", "System Design", "RBAC", "Payment Integration", "CI/CD"],
+      items: ["Multi-tenant SaaS", "Event-Driven Architecture", "REST APIs", "System Design", "RBAC", "Stripe", "CI/CD", "Agile/Scrum", "AI-Assisted Development (Claude Code, Copilot)"],
     },
   ]
 

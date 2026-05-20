@@ -13,10 +13,10 @@ export function HeroSection() {
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">Jesus Rosario</h1>
         <p className="text-2xl md:text-3xl text-primary font-semibold mb-8 text-balance">Lead Software Engineer</p>
         <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty">
-            Lead Software Engineer with a proven track record of building and scaling SaaS platforms from the ground up. 
-            Experienced in multi-tenant architectures, backend systems, and cloud-native applications, with a focus on 
-            delivering reliable, maintainable solutions that drive real business impact. Proven ability to turn complex 
-            requirements into clear designs and guide a team of developers to ship high-quality software in fast-paced environments.
+            Lead Software Engineer specializing in multi-tenant SaaS and cloud-native backend systems on AWS.
+            I design and build scalable platforms with a focus on reliability, security, and maintainability,
+            turning complex requirements into production-ready systems from initial architecture through team
+            delivery.
         </p>
 
         <div className="flex flex-col items-center gap-4 mb-8">

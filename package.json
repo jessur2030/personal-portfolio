@@ -6,6 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test:contact": "node --test scripts/check-contact.mjs",
     "start": "next start"
   },
   "dependencies": {

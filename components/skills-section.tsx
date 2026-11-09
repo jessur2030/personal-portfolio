@@ -1,51 +1,29 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Code, Database, Cloud, Settings } from "lucide-react"
+const areas = [
+  { title: "Backend and data", description: "Application services, relational data models, billing, and durable background processing.", tools: "TypeScript · Go · Node.js · SQL · MySQL · Redis" },
+  { title: "Cloud and infrastructure", description: "Multi-tenant AWS systems, containerized delivery, and deployment tooling.", tools: "AWS · ECS · RDS · S3 · SQS · EventBridge · Cognito · CloudFormation · Docker" },
+  { title: "Full-stack delivery", description: "Hands-on frontend development alongside backend architecture and technical team leadership.", tools: "React · Next.js · JavaScript · REST APIs · Enterprise SSO · RBAC" },
+]
 
 export function SkillsSection() {
-  const skills = [
-    {
-      category: "Languages & Frameworks",
-      icon: <Code className="w-6 h-6 text-primary" />,
-      items: ["TypeScript", "JavaScript", "Go", "SQL", "Node.js", "Next.js", "React"],
-    },
-    {
-      category: "Databases & Cloud",
-      icon: <Database className="w-6 h-6 text-primary" />,
-      items: ["MySQL", "Redis", "AWS", "ECS", "EC2", "RDS", "S3", "SQS", "EventBridge", "Lambda", "Cognito", "CloudFront", "CloudFormation", "Docker"],
-    },
-    {
-      category: "Architecture & Systems",
-      icon: <Settings className="w-6 h-6 text-primary" />,
-      items: ["Multi-tenant SaaS", "Event-Driven Architecture", "REST APIs", "System Design", "RBAC", "Stripe", "CI/CD", "Agile/Scrum", "AI-Assisted Development (Claude Code, Copilot)"],
-    },
-  ]
-
   return (
-    <section className="py-16 px-4" id="skills">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Technical Skills</h2>
-        <Card>
-          <CardContent className="p-8">
-            <div className="space-y-8">
-              {skills.map(({ category, icon, items }) => (
-                <div key={category}>
-                  <div className="flex items-center gap-3 mb-4">
-                    {icon}
-                    <h3 className="text-xl font-semibold text-foreground">{category}</h3>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {items.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="text-sm py-2 px-3">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              ))}
+    <section id="skills" className="bg-muted/50 px-4 py-16" aria-labelledby="skills-heading">
+      <div className="mx-auto max-w-4xl">
+        <h2 id="skills-heading" className="mb-8 text-3xl font-bold">Technical focus</h2>
+        <div className="grid gap-8 md:grid-cols-3">
+          {areas.map((area) => (
+            <div key={area.title}>
+              <h3 className="mb-3 text-lg font-semibold">{area.title}</h3>
+              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{area.description}</p>
+              <p className="text-sm leading-relaxed">{area.tools}</p>
             </div>
-          </CardContent>
-        </Card>
+          ))}
+        </div>
+        <div className="mt-8 border-t pt-6">
+          <h3 className="mb-3 text-lg font-semibold">AI-assisted development</h3>
+          <p className="mb-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">Hands-on use of AI coding tools for implementation, debugging, and test development, with code review and validation of generated changes.</p>
+          <p className="text-sm leading-relaxed">Claude Code · Codex · GitHub Copilot</p>
+        </div>
+        <p className="mt-8 text-sm text-muted-foreground">Additional experience: Lambda, CloudFront, and CI/CD.</p>
       </div>
     </section>
   )

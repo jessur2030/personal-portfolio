@@ -9,9 +9,9 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
-      <SkillsSection />
-      <ExperienceSection />
       <ProjectsSection />
+      <ExperienceSection />
+      <SkillsSection />
       <EducationSection />
       <ContactSection />
     </div>

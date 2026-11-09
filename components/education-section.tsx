@@ -1,22 +1,14 @@
-import { Card, CardHeader, CardTitle } from "@/components/ui/card"
-import { GraduationCap } from "lucide-react"
-
 export function EducationSection() {
   return (
-    <section className="py-16 px-4 bg-muted/50">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Education</h2>
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-3">
-              <GraduationCap className="w-6 h-6 text-primary" />
-              <div>
-                <h3 className="text-xl">A.S. Information Technology / Software Engineering</h3>
-                <p className="text-muted-foreground font-normal">New England Institute of Technology, RI</p>
-              </div>
-            </CardTitle>
-          </CardHeader>
-        </Card>
+    <section className="px-4 py-12" aria-labelledby="education-heading">
+      <div className="mx-auto max-w-4xl">
+        <h2 id="education-heading" className="mb-4 text-2xl font-bold">Education and training</h2>
+        <h3 className="font-semibold">A.S. Information Technology / Software Engineering</h3>
+        <p className="mt-1 text-sm text-muted-foreground">New England Institute of Technology, East Greenwich, RI</p>
+        <div className="mt-6 border-t pt-6">
+          <h3 className="font-semibold">CJIS Security and Privacy Training - Privileged Role</h3>
+          <p className="mt-1 text-sm text-muted-foreground">CJIS Online · Completed <time dateTime="2026-10-06">Oct 2026</time> · Expires <time dateTime="2027-10-06">Oct 2027</time></p>
+        </div>
       </div>
     </section>
   )

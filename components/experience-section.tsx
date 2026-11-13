@@ -4,20 +4,21 @@ const roles = [
   {
     title: "Lead Software Engineer",
     period: "Jan 2024 - Present",
-    summary: "Led the architecture and launch of GovQuest 2.0 and lead its engineering team through technical planning, architecture reviews, code review, and mentorship.",
+    summary: "Led the architecture and launch of GovQuest 2.0, replacing a legacy application with a multi-tenant platform on AWS.",
     achievements: [
-      "Designed and built workflow automation used by production agencies, with event and time-based triggers, ordered actions, recovery checkpoints, and run history.",
-      "Build backend systems spanning durable background jobs, request payments, and enterprise authentication.",
-      "Guide backend architecture, data modeling, and AWS infrastructure, partnering with product and leadership on technical priorities.",
+      "Lead technical planning, code reviews, and mentorship, working with product and leadership on delivery priorities.",
+      "Designed and built workflow automation for request handling, deadlines, and follow-up actions, now used by production agencies.",
+      "Build backend systems for background jobs, request payments, and enterprise authentication.",
     ],
   },
   {
     title: "Software Engineer",
     period: "May 2022 - Jan 2024",
-    summary: "Took ownership of legacy GovQuest as development moved in-house, maintaining the product while designing tenant-scoped MySQL data models for its successor.",
+    summary: "Took over legacy GovQuest maintenance and feature development as work moved in-house, while designing core MySQL data models for GovQuest 2.0.",
     achievements: [
-      "Migrated legacy file storage to S3, reducing storage costs.",
-      "Rebuilt the legacy Stripe integration and standardized development and deployment environments with Docker.",
+      "Migrated legacy file storage from AWS EBS to S3, reducing file-storage costs by 77%.",
+      "Rebuilt the legacy Stripe payment integration.",
+      "Standardized development and deployment environments with Docker, simplifying day-to-day development and cutting developer onboarding time by about 50%.",
     ],
   },
 ]

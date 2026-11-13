@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   metadataBase: new URL(profile.site),
   title: {
-    default: `${profile.name} | ${profile.title} — ${profile.focus}`,
+    default: `${profile.name} | ${profile.title}`,
     template: `%s | ${profile.name}`,
   },
   description: "Lead Software Engineer focused on backend systems, databases, and AWS infrastructure, with hands-on React and Next.js experience. Explore my work on GovQuest 2.0.",

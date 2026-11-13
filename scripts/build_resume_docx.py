@@ -60,6 +60,7 @@ configure_style('Title', size=20, leading=23, after=4, bold=True, keep=True)
 configure_style('Heading 1', size=11.5, leading=14, before=9, after=4, bold=True, keep=True)
 configure_style('Heading 2', size=10.5, leading=12.4, before=6, after=3, bold=True, keep=True)
 configure_style('Resume Role', before=3, after=3, bold=True, keep=True)
+configure_style('Resume Focus', after=3, keep=True)
 configure_style('Resume Contact', size=9.5, leading=11.5, after=3, keep=True)
 bullet_style = configure_style('Resume Bullet')
 bullet_style.paragraph_format.left_indent = Pt(10)
@@ -150,7 +151,13 @@ for raw in SOURCE.read_text().splitlines():
     elif line.startswith('- '):
         style, text = 'Resume Bullet', line[2:]
     elif not current_section:
-        style, text = ('Resume Role' if line.startswith('**') else 'Resume Contact'), line
+        if line.startswith('**'):
+            style = 'Resume Role'
+        elif '|' not in line and '[' not in line and '@' not in line:
+            style = 'Resume Focus'
+        else:
+            style = 'Resume Contact'
+        text = line
     elif current_section == 'Experience' and line.startswith('**'):
         style, text = 'Resume Role', line
     else:

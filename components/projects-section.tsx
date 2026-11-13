@@ -11,16 +11,16 @@ export function ProjectsSection() {
     <section id="projects" className="bg-muted/50 px-4 py-16" aria-labelledby="work-heading">
       <div className="mx-auto max-w-4xl">
         <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">Selected work</p>
-        <h2 id="work-heading" className="mb-8 text-3xl font-bold">Engineering a production SaaS platform</h2>
+        <h2 id="work-heading" className="mb-8 text-3xl font-bold">Featured work</h2>
         <Card>
           <CardContent className="grid gap-8 sm:p-8 md:grid-cols-[1.3fr_1fr]">
             <div>
               <p className="mb-3 text-sm text-muted-foreground">Professional work at PRI · Architecture and technical leadership</p>
               <h3 className="mb-4 text-2xl font-bold">GovQuest 2.0</h3>
               <p className="mb-5 leading-relaxed text-muted-foreground">
-                I led the architecture and launch of GovQuest 2.0, a multi-tenant platform
-                on AWS that helps government agencies manage public records requests.
-                I continue to lead engineering delivery and build its backend systems.
+                GovQuest 2.0 helps government agencies manage public records requests,
+                automate workflows, and collect request payments. I led its architecture
+                and launch on AWS and continue to build its backend systems.
               </p>
               <p className="mb-5 text-sm font-medium">Serving {profile.reach}</p>
               <div className="mb-6 flex flex-wrap gap-2">
@@ -33,10 +33,10 @@ export function ProjectsSection() {
             </div>
             <div className="space-y-6 border-t pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
               {[
-                ["Multi-tenant data models", "Tenant-scoped MySQL models for agency departments, groups, and roles."],
-                ["Reliable background processing", "Transactional outbox, deduplication, and retries to recover interrupted work."],
-                ["Workflow automation", "Configurable triggers and ordered actions, with recovery checkpoints and run history."],
-                ["Security and compliance", "Enterprise SSO, MFA, and access controls aligned with CJIS requirements; engineering support for FedRAMP compliance preparation."],
+                ["Multi-tenant architecture", "Agency-specific departments, groups, and roles within a shared platform."],
+                ["Event-driven backend systems", "TypeScript services on AWS that process request events and recover interrupted background work."],
+                ["Workflow automation", "Agency-defined rules for request handling, deadlines, and follow-up actions."],
+                ["Security and compliance", "Enterprise sign-in and access controls aligned with CJIS requirements, plus engineering support for ongoing FedRAMP compliance preparation."],
               ].map(([title, text]) => (
                 <div key={title}><h4 className="mb-2 font-semibold">{title}</h4><p className="text-sm leading-relaxed text-muted-foreground">{text}</p></div>
               ))}
@@ -54,7 +54,7 @@ export function ProjectsSection() {
               <CardContent className="p-6 sm:p-8">
                 <p className="mb-2 text-sm text-muted-foreground">Independent project · Browser extension</p>
                 <h4 className="mb-3 text-xl font-semibold">StructFlow</h4>
-                <p className="mb-4 leading-relaxed text-muted-foreground">An offline browser workspace for code snippets, JSON exploration, and Markdown notes, with a searchable library, import/export, and local storage in IndexedDB.</p>
+                <p className="mb-4 leading-relaxed text-muted-foreground">A browser workspace for code snippets, JSON, and Markdown notes. Works offline, with a searchable library and import/export.</p>
                 <div className="mb-5 flex flex-wrap gap-2">
                   {["React", "TypeScript", "IndexedDB"].map((tag) => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                 </div>

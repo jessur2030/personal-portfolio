@@ -14,11 +14,11 @@ export function HeroSection() {
         <p className="mb-2 text-2xl font-semibold sm:text-3xl">{profile.title}</p>
         <p className="mb-6 text-lg font-medium text-primary sm:text-xl">{profile.focus}</p>
         <p className="mx-auto mb-4 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-          I build SaaS platforms, backend systems, and cloud infrastructure. My work spans data modeling,
-          reliable background processing, workflow automation, and enterprise integrations.
+          I design and build multi-tenant SaaS platforms and backend systems on AWS,
+          from architecture through production.
         </p>
         <p className="mx-auto mb-8 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
-          At PRI, I led the architecture and launch of GovQuest 2.0 and lead the engineering team behind it.
+          At PRI, I led the development and launch of GovQuest 2.0 and continue to lead its engineering team.
         </p>
         <div className="mb-8 flex flex-wrap justify-center gap-3">
           <Button size="lg" asChild>

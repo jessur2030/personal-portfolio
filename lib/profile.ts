@@ -1,7 +1,7 @@
 export const profile = {
   name: "Jesus Rosario",
   title: "Lead Software Engineer",
-  focus: "Backend Systems & Cloud Infrastructure",
+  focus: "Backend systems and cloud infrastructure",
   location: "Miami, FL",
   email: "jesusmrdev@gmail.com",
   linkedin: "https://linkedin.com/in/jesus-rosario",

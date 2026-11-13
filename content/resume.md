@@ -1,6 +1,8 @@
 # Jesus Rosario
 
-**Lead Software Engineer | Backend Systems & Cloud Infrastructure**
+**Lead Software Engineer**
+
+Backend systems and cloud infrastructure
 
 Miami, FL | (860) 514-9347 | [jesusmrdev@gmail.com](mailto:jesusmrdev@gmail.com)
 [jessusdev.com](https://jessusdev.com/) | [linkedin.com/in/jesus-rosario](https://linkedin.com/in/jesus-rosario) | [github.com/jessur2030](https://github.com/jessur2030)

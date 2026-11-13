@@ -42,6 +42,7 @@ styles = {
     "heading": ParagraphStyle("Heading", fontName="Vera-Bold", fontSize=11.5, leading=14, spaceBefore=9, spaceAfter=4, keepWithNext=True),
     "company": ParagraphStyle("Company", fontName="Vera-Bold", fontSize=10, leading=12.4, spaceBefore=6, spaceAfter=3, keepWithNext=True),
     "role": ParagraphStyle("Role", **base, spaceBefore=3, spaceAfter=3, keepWithNext=True),
+    "focus": ParagraphStyle("Focus", **base, spaceAfter=3, keepWithNext=True),
     "bullet": ParagraphStyle("Bullet", **base, bulletFontName="Vera", bulletFontSize=10, leftIndent=10, firstLineIndent=0, bulletIndent=0, spaceAfter=3.5),
     "contact": ParagraphStyle("Contact", fontName="Vera", fontSize=9, leading=11.5, spaceAfter=3),
 }
@@ -64,7 +65,12 @@ for line in SOURCE.read_text().splitlines():
     else:
         style = "body"
         if not section:
-            style = "role" if line.startswith("**") else "contact"
+            if line.startswith("**"):
+                style = "role"
+            elif "|" not in line and "[" not in line and "@" not in line:
+                style = "focus"
+            else:
+                style = "contact"
         elif section == "Experience" and line.startswith("**"):
             style = "role"
         story.append(Paragraph(inline(line), styles[style]))

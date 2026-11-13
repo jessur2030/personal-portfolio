@@ -19,11 +19,10 @@ Open the local URL printed by Next.js. The homepage links to the GovQuest engine
 
 ```bash
 pnpm typecheck
-pnpm test:contact
 pnpm build
 ```
 
-The contact tests use mock responses and send no email. They cover confirmed success, HTTP errors, service rejection, malformed responses, and network failures. Live email delivery needs a separate authorized check. No ESLint configuration is installed in this repository; the legacy `next lint` command does not work with Next.js 16.
+No ESLint configuration is installed in this repository; the legacy `next lint` command does not work with Next.js 16.
 
 ## Career content and resume
 
@@ -62,11 +61,11 @@ Keep the resume template in `scripts/build_resume.py` to one column with standar
 
 The current resume uses Summary, Technical Skills, Experience, and Education and Training in that order. The summary foregrounds the GovQuest modernization and technical leadership; the experience bullets provide the supporting details and selected metrics.
 
-Current public positioning is **Lead Software Engineer | Backend Systems & Cloud Infrastructure**. Keep employment titles and dates consistent across the site and resume. The public site and downloadable resume emphasize personal ownership, technical decisions, and team leadership. Geographic reach is described as agencies across more than 30 U.S. states, as approved by Jesus. Exact team size, customer counts, operational and compliance milestones, external compliance partners, and internal financial reporting stay out of public materials. The two approved resume percentages are an exception: 77% lower file-storage costs and about 50% less developer onboarding time. Other private metrics are not automatically approved for publication. Keep fuller evidence in private career-ops and review it before adapting an application or interview answer. Public payment copy covers request payments, refunds, and custom PDF invoicing. Describe implemented event and relative-time automation without implying calendar-based recurrence has shipped.
+The role title is **Lead Software Engineer**. Present **Backend systems and cloud infrastructure** as a separate supporting line in the portfolio and resume. Use "and" in reader-facing wording rather than an ampersand. Keep employment titles and dates consistent across the site and resume. The public site and downloadable resume emphasize personal ownership, technical decisions, and team leadership. Geographic reach is described as agencies across more than 30 U.S. states, as approved by Jesus. Exact team size, customer counts, operational and compliance milestones, external compliance partners, and internal financial reporting stay out of public materials. The two approved resume percentages are an exception: 77% lower file-storage costs and about 50% less developer onboarding time. Other private metrics are not automatically approved for publication. Keep fuller evidence in private career-ops and review it before adapting an application or interview answer. Public payment copy covers request payments, refunds, and custom PDF invoicing. Describe implemented event and relative-time automation without implying calendar-based recurrence has shipped.
 
 ## Contact
 
-Direct email and LinkedIn links are available alongside the existing FormSubmit integration. JavaScript submissions use its AJAX endpoint and show delivery confirmation or an error that preserves entered text. The native form action remains available when JavaScript is disabled.
+The contact section provides direct email and LinkedIn links. It has no message form or third-party form-submission integration.
 
 ## License
 

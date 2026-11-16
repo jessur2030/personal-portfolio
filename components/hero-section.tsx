@@ -1,73 +1,39 @@
+import { ArrowDown, Download, Github, Linkedin, Mail, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Download, Github, Linkedin, Mail, Phone, MapPin as Location, MapPin, Zap } from "lucide-react"
-import { ThemeToggle } from "./theme-toggle"
+import { profile } from "@/lib/profile"
 
 export function HeroSection() {
   return (
-    <section className="py-20 px-4 relative">
-      <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Zap className="w-4 h-4" />
-              Available for new opportunities
-            </div>
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">Jesus Rosario</h1>
-        <p className="text-2xl md:text-3xl text-primary font-semibold mb-8 text-balance">Lead Software Engineer</p>
-        <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty">
-            Lead Software Engineer specializing in multi-tenant SaaS and cloud-native backend systems on AWS.
-            I design and build scalable platforms with a focus on reliability, security, and maintainability,
-            turning complex requirements into production-ready systems from initial architecture through team
-            delivery.
+    <section className="px-4 py-16 sm:py-24" aria-labelledby="intro-heading">
+      <div className="mx-auto max-w-4xl text-center">
+        <p className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+          <span className="h-2 w-2 rounded-full bg-current" aria-hidden="true" />
+          Open to Senior and Lead engineering opportunities
         </p>
-
-        <div className="flex flex-col items-center gap-4 mb-8">
-     
-           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="default" asChild>
-              <a href="/jesus-rosario-resume.pdf" target="_blank" rel="noopener noreferrer" download>
-                <Download className="w-4 h-4 mr-2" />
-                Download Resume
-              </a>
-            </Button>
-
-          <Button variant="outline" size="lg" className="gap-2 bg-transparent" asChild>
-              <a href="#contact">
-                <Mail className="w-5 h-5" />
-                Get in Touch
-              </a>
+        <h1 id="intro-heading" className="mb-4 text-balance text-4xl font-bold sm:text-6xl">{profile.name}</h1>
+        <p className="mb-2 text-2xl font-semibold sm:text-3xl">{profile.title}</p>
+        <p className="mb-6 text-lg font-medium text-primary sm:text-xl">{profile.focus}</p>
+        <p className="mx-auto mb-4 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
+          I design and build multi-tenant SaaS platforms and backend systems on AWS,
+          from architecture through production.
+        </p>
+        <p className="mx-auto mb-8 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
+          At PRI, I led the development and launch of GovQuest 2.0 and continue to lead its engineering team.
+        </p>
+        <div className="mb-8 flex flex-wrap justify-center gap-3">
+          <Button size="lg" asChild>
+            <a href="#projects"><ArrowDown aria-hidden="true" />Explore my work</a>
           </Button>
-          </div>
-
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                Miami, FL
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                (860) 514-9347
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                jesusmrdev@gmail.com
-              </div>
-            </div>
-    
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="outline" asChild>
-              <a href="https://linkedin.com/in/jesus-rosario" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="w-4 h-4 mr-2" />
-                LinkedIn
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="https://github.com/jessur2030" target="_blank" rel="noopener noreferrer">
-                <Github className="w-4 h-4 mr-2" />
-                GitHub
-              </a>
-            </Button>
-          </div>
+          <Button size="lg" variant="outline" asChild>
+            <a href={profile.resume} download><Download aria-hidden="true" />Download resume</a>
+          </Button>
         </div>
-        {/* Download Resume button moved into contact row above. Removed duplicate Miami, FL. */}
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-sm text-muted-foreground">
+          <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" aria-hidden="true" />{profile.location}</span>
+          <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 hover:text-foreground"><Mail className="h-4 w-4" aria-hidden="true" />Email</a>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-foreground"><Linkedin className="h-4 w-4" aria-hidden="true" />LinkedIn</a>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-foreground"><Github className="h-4 w-4" aria-hidden="true" />GitHub</a>
+        </div>
       </div>
     </section>
   )

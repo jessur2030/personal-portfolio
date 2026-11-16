@@ -1,110 +1,80 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import Link from "next/link"
+import Image from "next/image"
+import { ArrowUpRight, ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { 
-  ExternalLink, 
-} from "lucide-react"
-import Link from "next/link"
+import { Card, CardContent } from "@/components/ui/card"
+import { profile } from "@/lib/profile"
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-16 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="font-serif text-4xl font-bold text-center mb-12 text-balance">Featured Work</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card className="group hover:shadow-lg transition-shadow">
-            <CardHeader>
-              <div className="flex items-center justify-between gap-2 mb-1">
-                <CardTitle className="font-serif text-xl">GovQuest 2.0</CardTitle>
-                <Badge variant="secondary" className="text-[10px]">At PRI</Badge>
-              </div>
-              <CardDescription>CJIS-aligned Multi-tenant SaaS Platform</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4 text-sm">
-                A cloud-native, CJIS-aligned public records platform serving 50+ government organizations,
-                from small agencies to city-wide deployments. Built on AWS with event-driven workflows,
-                end-to-end Stripe billing, enterprise SSO/MFA, and a configurable workflow automation engine.
+    <section id="projects" className="bg-muted/50 px-4 py-16" aria-labelledby="work-heading">
+      <div className="mx-auto max-w-4xl">
+        <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">Selected work</p>
+        <h2 id="work-heading" className="mb-8 text-3xl font-bold">Featured work</h2>
+        <Card>
+          <CardContent className="grid gap-8 sm:p-8 md:grid-cols-[1.3fr_1fr]">
+            <div>
+              <p className="mb-3 text-sm text-muted-foreground">Professional work at PRI · Architecture and technical leadership</p>
+              <h3 className="mb-4 text-2xl font-bold">GovQuest 2.0</h3>
+              <p className="mb-5 leading-relaxed text-muted-foreground">
+                GovQuest 2.0 helps government agencies manage public records requests,
+                automate workflows, and collect request payments. I led its architecture
+                and launch on AWS and continue to build its backend systems.
               </p>
-              <div className="flex flex-wrap gap-1 mb-4">
-                <Badge variant="outline" className="text-xs">
-                  TypeScript
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  Node.js
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  Next.js
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  MySQL
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  Redis
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  AWS
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  ECS
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  EventBridge
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  SQS
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  Lambda
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  RDS
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  S3
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  Cognito
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  CloudFront
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  Event-Driven Architecture
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  Stripe
-                </Badge>
-                <Badge variant="outline" className="text-xs">
-                  Multi-tenant SaaS
-                </Badge>
+              <p className="mb-5 text-sm font-medium">Serving {profile.reach}</p>
+              <div className="mb-6 flex flex-wrap gap-2">
+                {["TypeScript", "Node.js", "MySQL", "AWS", "Multi-tenant SaaS"].map((tag) => <Badge key={tag} variant="secondary">{tag}</Badge>)}
               </div>
-              <Button variant="outline" size="sm" className="w-full gap-2 bg-transparent" asChild>
-                <Link href={"http://govquest.com/"} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="w-3 h-3" />
-                  View Project
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="border-dashed border-2 border-muted-foreground/20">
-            <CardContent className="flex flex-col items-center justify-center h-full py-12 text-center">
-              <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center mb-4">
-                <span className="text-2xl">+</span>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild><Link href="/work/govquest">Read case study<ArrowUpRight aria-hidden="true" /></Link></Button>
+                <Button variant="outline" asChild><a href={profile.product} target="_blank" rel="noopener noreferrer">Product website<ExternalLink aria-hidden="true" /></a></Button>
               </div>
-              <p className="text-muted-foreground text-sm">More work coming soon</p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-dashed border-2 border-muted-foreground/20">
-            <CardContent className="flex flex-col items-center justify-center h-full py-12 text-center">
-              <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center mb-4">
-                <span className="text-2xl">+</span>
+            </div>
+            <div className="space-y-6 border-t pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+              {[
+                ["Multi-tenant architecture", "Agency-specific departments, groups, and roles within a shared platform."],
+                ["Event-driven backend systems", "TypeScript services on AWS that process request events and recover interrupted background work."],
+                ["Workflow automation", "Agency-defined rules for request handling, deadlines, and follow-up actions."],
+                ["Security and compliance", "Enterprise sign-in and access controls aligned with CJIS requirements, plus engineering support for ongoing FedRAMP compliance preparation."],
+              ].map(([title, text]) => (
+                <div key={title}><h4 className="mb-2 font-semibold">{title}</h4><p className="text-sm leading-relaxed text-muted-foreground">{text}</p></div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+        <div className="mt-12" aria-labelledby="open-source-heading">
+          <h3 id="open-source-heading" className="mb-3 text-2xl font-semibold">Open-source developer tools</h3>
+          <p className="mb-6 max-w-2xl leading-relaxed text-muted-foreground">Outside my work at PRI, I build tools for everyday development.</p>
+          <Card className="mb-6 gap-0 overflow-hidden py-0">
+            <div className="grid md:grid-cols-[1.25fr_1fr]">
+              <div className="flex items-center p-5 pb-0 sm:p-6 sm:pb-0 md:pb-6 md:pr-0">
+                <Image src="/projects/structflow-json-annotated.png" alt="StructFlow store preview: themeable, searchable JSON with an in-page viewer" width={1280} height={800} className="h-auto w-full rounded-lg border border-border shadow-sm" sizes="(min-width: 896px) 475px, (min-width: 768px) 53vw, 100vw" />
               </div>
-              <p className="text-muted-foreground text-sm">More work coming soon</p>
-            </CardContent>
+              <CardContent className="p-6 sm:p-8">
+                <p className="mb-2 text-sm text-muted-foreground">Independent project · Browser extension</p>
+                <h4 className="mb-3 text-xl font-semibold">StructFlow</h4>
+                <p className="mb-4 leading-relaxed text-muted-foreground">A browser workspace for code snippets, JSON, and Markdown notes. Works offline, with a searchable library and import/export.</p>
+                <div className="mb-5 flex flex-wrap gap-2">
+                  {["React", "TypeScript", "IndexedDB"].map((tag) => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <Button variant="outline" asChild><a href="https://chromewebstore.google.com/detail/structflow/gnjabohddgleaghkhglofkepfmadclmj" target="_blank" rel="noopener noreferrer">Chrome Web Store<ExternalLink aria-hidden="true" /></a></Button>
+                  <Button variant="ghost" asChild><a href="https://github.com/jessur2030/structflow" target="_blank" rel="noopener noreferrer">View source<ArrowUpRight aria-hidden="true" /></a></Button>
+                </div>
+              </CardContent>
+            </div>
           </Card>
+          <div className="flex flex-col gap-4 rounded-xl border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-xl">
+              <h4 className="mb-2 text-lg font-semibold">Aura Noir</h4>
+              <p className="text-sm leading-relaxed text-muted-foreground">A VS Code theme family with nine variants, semantic highlighting, and coordinated editor and workbench colors.</p>
+            </div>
+            <div className="flex shrink-0 flex-wrap gap-x-5 gap-y-3 text-sm font-medium">
+              <a href="https://marketplace.visualstudio.com/items?itemName=jessusdev.aura-noir-theme" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 underline underline-offset-4 hover:text-primary">Marketplace<ExternalLink className="h-4 w-4" aria-hidden="true" /></a>
+              <a href="https://github.com/jessur2030/aura-noir-theme" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 underline underline-offset-4 hover:text-primary">GitHub<ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

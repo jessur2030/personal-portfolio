@@ -22,7 +22,7 @@ pnpm typecheck
 pnpm build
 ```
 
-No ESLint configuration is installed in this repository; the legacy `next lint` command does not work with Next.js 16.
+No ESLint configuration is installed in this repository, so there is no `lint` script. Next.js 16 no longer provides `next lint`.
 
 ## Career content and resume
 

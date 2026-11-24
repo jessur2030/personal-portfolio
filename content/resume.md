@@ -17,7 +17,7 @@ Hands-on Lead Software Engineer who led the architecture, development, and launc
 **Cloud and delivery:** AWS, ECS, RDS, S3, SQS, EventBridge, Lambda, Cognito, CloudFormation, Docker, CI/CD
 **Architecture:** Multi-tenant SaaS, event-driven systems, relational data modeling, RBAC, enterprise SSO
 **Frontend:** React, Next.js
-**AI-assisted development:** Claude Code, Codex, GitHub Copilot; implementation, debugging, and test development with code review and validation.
+**AI-assisted development:** Claude Code, Codex, GitHub Copilot; agentic coding workflows for implementation, debugging, and tests, with code review and validation.
 
 ## Experience
 

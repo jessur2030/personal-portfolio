@@ -39,7 +39,7 @@ Hands-on Lead Software Engineer who led the architecture, development, and launc
 - Rebuilt the legacy Stripe payment integration in PHP and CodeIgniter.
 - Standardized development and deployment environments with Docker, simplifying day-to-day development and cutting developer onboarding time by about 50%.
 
-**Freelance Software Engineer | Self-employed | Jan 2021 - Mar 2022**
+### Freelance Software Engineer | Self-employed | Jan 2021 - Mar 2022
 
 - Built and launched websites for small businesses and contributed to backend APIs and database design.
 

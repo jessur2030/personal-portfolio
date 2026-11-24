@@ -31,20 +31,28 @@ def inline(text):
     return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text)
 
 
-font_dir = Path(reportlab.__file__).parent / "fonts"
-pdfmetrics.registerFont(TTFont("Vera", str(font_dir / "Vera.ttf")))
-pdfmetrics.registerFont(TTFont("Vera-Bold", str(font_dir / "VeraBd.ttf")))
-pdfmetrics.registerFontFamily("Vera", normal="Vera", bold="Vera-Bold")
-base = dict(fontName="Vera", fontSize=10, leading=12.4, textColor=colors.black, alignment=TA_LEFT)
+# Arial matches the Word companion. Fall back to ReportLab's bundled Vera Sans
+# where the macOS Arial files are unavailable; Vera is wider, so recheck the layout.
+arial_dir = Path("/System/Library/Fonts/Supplemental")
+font_files = (arial_dir / "Arial.ttf", arial_dir / "Arial Bold.ttf")
+font_label = "Arial"
+if not all(path.exists() for path in font_files):
+    vera_dir = Path(reportlab.__file__).parent / "fonts"
+    font_files = (vera_dir / "Vera.ttf", vera_dir / "VeraBd.ttf")
+    font_label = "Bitstream Vera Sans (Arial not found)"
+pdfmetrics.registerFont(TTFont("Resume", str(font_files[0])))
+pdfmetrics.registerFont(TTFont("Resume-Bold", str(font_files[1])))
+pdfmetrics.registerFontFamily("Resume", normal="Resume", bold="Resume-Bold")
+base = dict(fontName="Resume", fontSize=10, leading=12.4, textColor=colors.black, alignment=TA_LEFT)
 styles = {
     "body": ParagraphStyle("Body", **base, spaceAfter=3.5),
-    "title": ParagraphStyle("Title", fontName="Vera-Bold", fontSize=20, leading=23, spaceAfter=4),
-    "heading": ParagraphStyle("Heading", fontName="Vera-Bold", fontSize=11.5, leading=14, spaceBefore=9, spaceAfter=4, keepWithNext=True),
-    "company": ParagraphStyle("Company", fontName="Vera-Bold", fontSize=10, leading=12.4, spaceBefore=6, spaceAfter=3, keepWithNext=True),
+    "title": ParagraphStyle("Title", fontName="Resume-Bold", fontSize=20, leading=23, spaceAfter=4),
+    "heading": ParagraphStyle("Heading", fontName="Resume-Bold", fontSize=11.5, leading=14, spaceBefore=9, spaceAfter=4, keepWithNext=True),
+    "company": ParagraphStyle("Company", fontName="Resume-Bold", fontSize=10, leading=12.4, spaceBefore=6, spaceAfter=3, keepWithNext=True),
     "role": ParagraphStyle("Role", **base, spaceBefore=3, spaceAfter=3, keepWithNext=True),
     "focus": ParagraphStyle("Focus", **base, spaceAfter=3, keepWithNext=True),
-    "bullet": ParagraphStyle("Bullet", **base, bulletFontName="Vera", bulletFontSize=10, leftIndent=10, firstLineIndent=0, bulletIndent=0, spaceAfter=3.5),
-    "contact": ParagraphStyle("Contact", fontName="Vera", fontSize=9, leading=11.5, spaceAfter=3),
+    "bullet": ParagraphStyle("Bullet", **base, bulletFontName="Resume", bulletFontSize=10, leftIndent=11, firstLineIndent=0, bulletIndent=1, spaceAfter=3.5),
+    "contact": ParagraphStyle("Contact", fontName="Resume", fontSize=9, leading=11.5, spaceAfter=3),
 }
 
 story = []
@@ -86,4 +94,4 @@ doc = SimpleDocTemplate(str(OUTPUT), pagesize=(8.5 * inch, 11 * inch), rightMarg
 doc.build(story, onFirstPage=count_page, onLaterPages=count_page)
 if len(page_count) != 1:
     raise RuntimeError(f"Resume must fit one page; generated {len(page_count)}. Revise content or spacing and render again.")
-print(f"Built one-page resume: {OUTPUT}")
+print(f"Built one-page resume in {font_label}: {OUTPUT}")
